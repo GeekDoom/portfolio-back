@@ -15,7 +15,10 @@ dbConnection();
 app.use(express.static('public'));
 
 //Cors
-app.use(cors())
+app.use(cors({
+    origin: 'https://josegoyos.vercel.app/',
+    methods: ['GET', 'POST', 'DELETE', 'UPDATE', 'PUT', 'PATCH']
+}))
 
 
 //Lectura y parseo del body
