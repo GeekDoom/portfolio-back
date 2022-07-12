@@ -25,7 +25,7 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-//multer storage disk and rename img
+//multer storage disk and rename image
 const storage = multer.diskStorage({
     destination: path.join(__dirname, 'public/uploads'),
     filename: (req, file, cb) => {
