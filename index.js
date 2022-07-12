@@ -1,5 +1,7 @@
 const express = require('express');
 const cors = require('cors');
+const multer = require('multer');
+const path = require('path');
 const { dbConnection } = require('./db/config');
 require('dotenv').config();
 
@@ -18,6 +20,16 @@ app.use(cors())
 
 //Lectura y parseo del body
 app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
+
+//multer storage disk and rename img
+const storage = multer.diskStorage({
+    destination: path.join(__dirname, 'public/uploads'),
+    filename: (req, file, cb) => {
+        cb(null, new Date().getTime() + path.extname(file.originalname));
+    }
+});
+app.use(multer({ storage }).single('imgURL'));
 
 
 

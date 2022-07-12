@@ -15,9 +15,11 @@ const demoSchema = Schema({
         type: String,
         required: true
     },
-    imgName: {
+    imgURL: {
         type: String,
-        required: true
+    },
+    public_id: {
+        type: String,
     }
 
 });

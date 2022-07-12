@@ -1,5 +1,5 @@
 const { Router } = require('express');
-const { newDemo, demo } = require('../controllers/demos.controller');
+const { newDemo, demo, deleteDemo } = require('../controllers/demos.controller');
 const { validateFields } = require('../middlewares/validate');
 
 const router = Router();
@@ -12,8 +12,8 @@ router.post('/newDemo', validateFields, newDemo)
 //get all demo
 router.get('/', validateFields, demo)
 
-
-
+//Delete a demos
+router.get('/delete/:_id', deleteDemo)
 
 module.exports = router;
 
