@@ -10,7 +10,7 @@ router.post('/newDemo', validateFields, newDemo)
 
 
 //get all demo
-router.get('/', validateFields, demo)
+router.get('/', demo)
 
 //Delete a demos
 router.get('/delete/:_id', deleteDemo)
