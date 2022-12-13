@@ -29,6 +29,7 @@ const storage = multer.diskStorage({
         cb(null, new Date().getTime() + path.extname(file.originalname));
     }
 });
+//img Storage
 app.use(multer({ storage }).single('imgURL'));
 
 
